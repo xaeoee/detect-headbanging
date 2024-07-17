@@ -11,6 +11,27 @@ def evaluate_videos(video_folder):
     # 평가 결과 저장용 리스트
     results = []
 
+
+    print(f"Evaluating videos in folder: {video_folder}")
+    
+    # Check if the directory exists
+    if not os.path.isdir(video_folder):
+        print(f"Directory does not exist: {video_folder}")
+        return []
+    
+    # List all files in the directory for debugging
+    all_files = os.listdir(video_folder)
+    print(f"All files in directory: {all_files}")
+    
+    # Get all .mp4 files in the directory
+    video_files = glob.glob(os.path.join(video_folder, '*.mp4'))
+    print(f"Found {len(video_files)} videos for evaluation.")
+
+
+
+
+
+
     for video_path in tqdm(video_files[:5]):
         # print(f"Evaluating {os.path.basename(video_path)}...")
         angle_changes, direction_changes, direction_change_counts, _, _, _ = detect_headbanging(video_path, False)

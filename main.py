@@ -1,3 +1,4 @@
+# standard libray in Python for writing user-rriendly command-line interfaces.
 import argparse
 from headbanging_detection import detect_headbanging
 from plotting_util import plot_results
@@ -27,8 +28,8 @@ def main():
         raise NotImplementedError("Evaluation mode is not implemented in this example.")
 
     angle_changes, direction_changes, direction_change_counts, x_cord, y_cord, z_cord = detect_headbanging(video_path, args.verbose)
-    if args.plot :
-        plot_results(angle_changes, direction_changes, direction_change_counts, x_cord, y_cord, z_cord)
+    # if args.plot :
+    #     plot_results(angle_changes, direction_changes, direction_change_counts, x_cord, y_cord, z_cord)
 
 if __name__ == "__main__":
     main()
